@@ -1,0 +1,9 @@
+{
+  "projects": {
+    "default": "flutter-sample-fire-dev",
+    "dev": "flutter-sample-fire-dev",
+    "prod": "flutter-sample-fire-prod"
+  },
+  "targets": {},
+  "etags": {}
+}
