@@ -1,3 +1,6 @@
+// ignore_for_file: avoid_print
+
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 
@@ -6,9 +9,15 @@ import 'firebase_options.dart';
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
 
+  // Firebaseの初期化
   await Firebase.initializeApp(
     options: DefaultFirebaseOptions.currentPlatform,
   );
+
+  // 匿名ユーザーでサインインする
+  // サインイン済みなら何もしないので無条件に呼び出してOK
+  final credential = await FirebaseAuth.instance.signInAnonymously();
+  print('uid = ${credential.user?.uid}');
 
   runApp(const MyApp());
 }
