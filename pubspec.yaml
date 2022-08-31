@@ -7,6 +7,7 @@ environment:
 
 dependencies:
   cupertino_icons: ^1.0.2
+  firebase_core: ^1.21.1
   flutter:
     sdk: flutter
 
