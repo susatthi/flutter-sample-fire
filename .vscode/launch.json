@@ -17,7 +17,7 @@
         "localhost",
         "--web-port",
         "5000",
-        "--dart-define=FLAVOR=local"
+        "--dart-define=FLAVOR=dev"
       ]
     },
     {
@@ -27,9 +27,6 @@
       "flutterMode": "debug",
       "program": "lib/main.dart",
       "args": [
-        "--flavor",
-        "dev",
-        "--dart-define=FLAVOR=local"
       ]
     },
     {
@@ -39,9 +36,6 @@
       "flutterMode": "debug",
       "program": "lib/main.dart",
       "args": [
-        "--flavor",
-        "prod",
-        "--dart-define=FLAVOR=prod"
       ]
     }
   ]
