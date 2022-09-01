@@ -16,6 +16,7 @@ dependencies:
 
 dev_dependencies:
   flutter_launcher_icons: ^0.10.0
+  flutter_native_splash: ^2.2.8
   flutter_test:
     sdk: flutter
   pedantic_mono: ^1.19.2
