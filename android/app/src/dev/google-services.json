@@ -7,9 +7,9 @@
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:457689841576:android:0bed534824a6b01eee279d",
+        "mobilesdk_app_id": "1:457689841576:android:00a4bf4a939a212aee279d",
         "android_client_info": {
-          "package_name": "jp.keyber.flutter_sample_fire"
+          "package_name": "jp.keyber.flutter_sample_fire.dev"
         }
       },
       "oauth_client": [

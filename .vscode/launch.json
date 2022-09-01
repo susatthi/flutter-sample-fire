@@ -43,6 +43,9 @@
       "flutterMode": "debug",
       "program": "lib/main.dart",
       "args": [
+        "--flavor",
+        "dev",
+        "--dart-define=FLAVOR=dev"
       ]
     },
     {
@@ -52,6 +55,9 @@
       "flutterMode": "debug",
       "program": "lib/main.dart",
       "args": [
+        "--flavor",
+        "prod",
+        "--dart-define=FLAVOR=prod"
       ]
     }
   ]

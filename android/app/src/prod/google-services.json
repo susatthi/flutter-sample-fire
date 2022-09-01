@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "299892698313",
+    "project_id": "flutter-sample-fire-prod",
+    "storage_bucket": "flutter-sample-fire-prod.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:299892698313:android:e596c4c3213685e346f118",
+        "android_client_info": {
+          "package_name": "jp.keyber.flutter_sample_fire"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "299892698313-1v2sqksggl6l2kr3ffqea2on03bqcqkj.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC60Xh-qIcFPiXkCZfWJVHjK7TVKehHhJE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "299892698313-1v2sqksggl6l2kr3ffqea2on03bqcqkj.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
