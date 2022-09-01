@@ -14,16 +14,22 @@ import 'package:flutter/foundation.dart'
 ///   options: DefaultFirebaseOptions.currentPlatform,
 /// );
 /// ```
-class DefaultFirebaseOptions {
+class DefaultFirebaseOptionsProd {
   static FirebaseOptions get currentPlatform {
     if (kIsWeb) {
       return web;
     }
     switch (defaultTargetPlatform) {
       case TargetPlatform.android:
-        return android;
+        throw UnsupportedError(
+          'DefaultFirebaseOptions have not been configured for android - '
+          'you can reconfigure this by running the FlutterFire CLI again.',
+        );
       case TargetPlatform.iOS:
-        return ios;
+        throw UnsupportedError(
+          'DefaultFirebaseOptions have not been configured for ios - '
+          'you can reconfigure this by running the FlutterFire CLI again.',
+        );
       case TargetPlatform.macOS:
         throw UnsupportedError(
           'DefaultFirebaseOptions have not been configured for macos - '
@@ -47,30 +53,11 @@ class DefaultFirebaseOptions {
   }
 
   static const FirebaseOptions web = FirebaseOptions(
-    apiKey: 'AIzaSyAsbVv2NZBfNREaP5mhKqlQNtiZO3fJyj8',
-    appId: '1:457689841576:web:3aa7ca192e8a2390ee279d',
-    messagingSenderId: '457689841576',
-    projectId: 'flutter-sample-fire-dev',
-    authDomain: 'flutter-sample-fire-dev.firebaseapp.com',
-    storageBucket: 'flutter-sample-fire-dev.appspot.com',
-    measurementId: 'G-QL9KR6DQZ9',
-  );
-
-  static const FirebaseOptions android = FirebaseOptions(
-    apiKey: 'AIzaSyCpg2GgaFQvJMHt76hEPA7ffTI6lNJKUN4',
-    appId: '1:457689841576:android:0bed534824a6b01eee279d',
-    messagingSenderId: '457689841576',
-    projectId: 'flutter-sample-fire-dev',
-    storageBucket: 'flutter-sample-fire-dev.appspot.com',
-  );
-
-  static const FirebaseOptions ios = FirebaseOptions(
-    apiKey: 'AIzaSyD0A85C69-_J7rZeyN2Z9avmE07oDKy7b4',
-    appId: '1:457689841576:ios:d92e44a1b16d7217ee279d',
-    messagingSenderId: '457689841576',
-    projectId: 'flutter-sample-fire-dev',
-    storageBucket: 'flutter-sample-fire-dev.appspot.com',
-    iosClientId: '457689841576-4rj3pu2j926sqrgqsq7c3n76qkhur5jl.apps.googleusercontent.com',
-    iosBundleId: 'jp.keyber.flutterSampleFire',
+    apiKey: 'AIzaSyB4YKeXtGes8Bmsgc2kK7eWeXwprMavFz0',
+    appId: '1:299892698313:web:25e013ac77007e6a46f118',
+    messagingSenderId: '299892698313',
+    projectId: 'flutter-sample-fire-prod',
+    authDomain: 'flutter-sample-fire-prod.firebaseapp.com',
+    storageBucket: 'flutter-sample-fire-prod.appspot.com',
   );
 }

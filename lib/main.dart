@@ -1,19 +1,53 @@
 // ignore_for_file: avoid_print
 
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:collection/collection.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 
-import 'firebase_options.dart';
+import 'firebase_options_dev.dart';
+import 'firebase_options_prod.dart';
+
+/// 環境（フレーバー）
+enum Flavor {
+  /// 開発環境
+  dev,
+
+  /// 本番環境
+  prod,
+  ;
+
+  /// 文字列から Flavor を返す
+  /// 見つからない場合は dev になる
+  static Flavor valueOf(String? name) =>
+      Flavor.values.firstWhereOrNull((flavor) => flavor.name == name) ??
+      Flavor.dev;
+
+  FirebaseOptions get firebaseOptions {
+    switch (flavor) {
+      case Flavor.dev:
+        return DefaultFirebaseOptionsDev.currentPlatform;
+      case Flavor.prod:
+        return DefaultFirebaseOptionsProd.currentPlatform;
+    }
+  }
+}
+
+/// 現在のフレーバー
+final flavor = Flavor.valueOf(const String.fromEnvironment('FLAVOR'));
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
 
+  print('flavor = ${flavor.name}');
+
   // Firebaseの初期化
   await Firebase.initializeApp(
-    options: DefaultFirebaseOptions.currentPlatform,
+    options: flavor.firebaseOptions,
   );
+
+  // await FirebaseAuth.instance.signOut();
 
   // 匿名ユーザーを取得する
   final firebaseUser = await FirebaseAuth.instance.userChanges().first;
@@ -91,15 +125,16 @@ class MyHomePage extends StatelessWidget {
             StreamBuilder<DocumentSnapshot<Map<String, dynamic>>>(
               stream: _changesUserDocumentSnapshot(),
               builder: (context, snapshot) {
+                final data = snapshot.data?.data();
                 print(
                   'Change user doc: '
-                  'connectionState = ${snapshot.connectionState}',
+                  'connectionState = ${snapshot.connectionState} '
+                  'data = $data',
                 );
                 if (snapshot.connectionState == ConnectionState.waiting) {
                   return const CircularProgressIndicator();
                 }
 
-                final data = snapshot.data?.data();
                 if (data == null) {
                   return const CircularProgressIndicator();
                 }
