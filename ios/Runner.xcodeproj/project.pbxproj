@@ -20,8 +20,6 @@
 		D8F0E0B828C04EFB006DAFFA /* Debug-prod.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = D8F0E0B428C04EDE006DAFFA /* Debug-prod.xcconfig */; };
 		D8F0E0BA28C04F14006DAFFA /* Release-dev.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = D8F0E0B928C04F14006DAFFA /* Release-dev.xcconfig */; };
 		D8F0E0BC28C04F27006DAFFA /* Release-prod.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = D8F0E0BB28C04F27006DAFFA /* Release-prod.xcconfig */; };
-		D8F0E0C728C07143006DAFFA /* GoogleService-Info-dev.plist in Resources */ = {isa = PBXBuildFile; fileRef = D8F0E0C628C07143006DAFFA /* GoogleService-Info-dev.plist */; };
-		D8F0E0C928C0716B006DAFFA /* GoogleService-Info-prod.plist in Resources */ = {isa = PBXBuildFile; fileRef = D8F0E0C828C0716B006DAFFA /* GoogleService-Info-prod.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -64,8 +62,6 @@
 		D8F0E0B428C04EDE006DAFFA /* Debug-prod.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; name = "Debug-prod.xcconfig"; path = "Flutter/Debug-prod.xcconfig"; sourceTree = "<group>"; };
 		D8F0E0B928C04F14006DAFFA /* Release-dev.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; name = "Release-dev.xcconfig"; path = "Flutter/Release-dev.xcconfig"; sourceTree = "<group>"; };
 		D8F0E0BB28C04F27006DAFFA /* Release-prod.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; name = "Release-prod.xcconfig"; path = "Flutter/Release-prod.xcconfig"; sourceTree = "<group>"; };
-		D8F0E0C628C07143006DAFFA /* GoogleService-Info-dev.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info-dev.plist"; sourceTree = "<group>"; };
-		D8F0E0C828C0716B006DAFFA /* GoogleService-Info-prod.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info-prod.plist"; sourceTree = "<group>"; };
 		FE9FD7B26EBCAC72F7C94FC4 /* Pods-Runner.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Runner.release.xcconfig"; path = "Target Support Files/Pods-Runner/Pods-Runner.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -142,7 +138,6 @@
 		97C146F01CF9000F007C117D /* Runner */ = {
 			isa = PBXGroup;
 			children = (
-				D8F0E0C528C070E6006DAFFA /* Firebase */,
 				97C146FA1CF9000F007C117D /* Main.storyboard */,
 				97C146FD1CF9000F007C117D /* Assets.xcassets */,
 				97C146FF1CF9000F007C117D /* LaunchScreen.storyboard */,
@@ -153,15 +148,6 @@
 				74858FAD1ED2DC5600515810 /* Runner-Bridging-Header.h */,
 			);
 			path = Runner;
-			sourceTree = "<group>";
-		};
-		D8F0E0C528C070E6006DAFFA /* Firebase */ = {
-			isa = PBXGroup;
-			children = (
-				D8F0E0C628C07143006DAFFA /* GoogleService-Info-dev.plist */,
-				D8F0E0C828C0716B006DAFFA /* GoogleService-Info-prod.plist */,
-			);
-			path = Firebase;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -180,7 +166,6 @@
 				3B06AD1E1E4923F5004D2608 /* Thin Binary */,
 				5D014CE62B11952A5C0F1738 /* [CP] Embed Pods Frameworks */,
 				4777899FC08375F287DC09AB /* [CP] Copy Pods Resources */,
-				D8F0E0CA28C07181006DAFFA /* Run Replace Google Service Info */,
 			);
 			buildRules = (
 			);
@@ -229,7 +214,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D8F0E0C928C0716B006DAFFA /* GoogleService-Info-prod.plist in Resources */,
 				D8F0E0BA28C04F14006DAFFA /* Release-dev.xcconfig in Resources */,
 				97C147011CF9000F007C117D /* LaunchScreen.storyboard in Resources */,
 				3B3967161E833CAA004F5970 /* AppFrameworkInfo.plist in Resources */,
@@ -239,7 +223,6 @@
 				D8F0E0B628C04EF4006DAFFA /* prod.xcconfig in Resources */,
 				D8F0E0B528C04EF2006DAFFA /* dev.xcconfig in Resources */,
 				97C146FC1CF9000F007C117D /* Main.storyboard in Resources */,
-				D8F0E0C728C07143006DAFFA /* GoogleService-Info-dev.plist in Resources */,
 				D8F0E0B728C04EF7006DAFFA /* Debug-dev.xcconfig in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -329,26 +312,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "/bin/sh \"$FLUTTER_ROOT/packages/flutter_tools/bin/xcode_backend.sh\" build";
-		};
-		D8F0E0CA28C07181006DAFFA /* Run Replace Google Service Info */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-			);
-			name = "Run Replace Google Service Info";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Runner/GoogleService-Info.plist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "/bin/sh ./replace_google_service_info.sh\n";
+			shellScript = "/bin/sh \"$FLUTTER_ROOT/packages/flutter_tools/bin/xcode_backend.sh\" build\n";
 		};
 /* End PBXShellScriptBuildPhase section */
 
