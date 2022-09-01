@@ -1,0 +1,4 @@
+FLUTTER_FLAVOR=prod
+PRODUCT_BUNDLE_IDENTIFIER=jp.keyber.flutter-sample-fire
+DISPLAY_NAME=FlutterFire
+FLUTTER_TARGET=lib/main.dart

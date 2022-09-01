@@ -66,12 +66,12 @@ class DefaultFirebaseOptionsDev {
 
   static const FirebaseOptions ios = FirebaseOptions(
     apiKey: 'AIzaSyD0A85C69-_J7rZeyN2Z9avmE07oDKy7b4',
-    appId: '1:457689841576:ios:d92e44a1b16d7217ee279d',
+    appId: '1:457689841576:ios:717376cfc0dfff49ee279d',
     messagingSenderId: '457689841576',
     projectId: 'flutter-sample-fire-dev',
     storageBucket: 'flutter-sample-fire-dev.appspot.com',
     iosClientId:
-        '457689841576-4rj3pu2j926sqrgqsq7c3n76qkhur5jl.apps.googleusercontent.com',
-    iosBundleId: 'jp.keyber.flutterSampleFire',
+        '457689841576-lcnpko69d4appr0mq3kdvs6romsc648u.apps.googleusercontent.com',
+    iosBundleId: 'jp.keyber.flutter-sample-fire.dev',
   );
 }
